@@ -1,0 +1,65 @@
+Notice
+
+Copyright
+
+Copyright (c) 2026 Torc Robotics, Inc. All rights reserved.
+
+Dataset Name
+
+TruckDrive v0.1
+
+Publisher
+
+Torc Robotics, Inc.
+405 Partnership Drive SE
+Blacksburg, VA 24060
+licensing@torc.ai
+
+License Summary
+
+This Dataset is released under the Torc Robotics Non-Commercial License
+v1.0. See LICENSE-NONCOMMERCIAL.txt for the full license text.
+
+Commercial Use as defined in LICENSE-NONCOMMERCIAL.txt requires a
+separate written license agreement. See LICENSE-COMMERCIAL.txt or
+contact licensing@torc.ai.
+
+Required Attribution
+
+Any permitted use or distribution of this Dataset or Adapted Material
+must include the following attribution:
+
+    "TruckDrive, provided by Torc Robotics, Inc., available at torc.github.io/TruckDrive,
+    used under the Torc Robotics Non-Commercial License v1.0."
+
+For academic publications, use the citation format in CITATION.cff.
+
+Data Content Notice
+
+The TruckDrive Dataset consists of annotated autonomous vehicle driving
+data collected on public roads in the United States, excluding footage
+collected in Illinois and California. The distribution includes 3D and
+2D annotations, calibration data, localization poses, and associated
+metadata. Raw sensor streams are not included in this release.
+
+Users may not use any vehicle or location data in the Dataset to query
+motor vehicle records or attempt to identify any individual. See
+LICENSE-NONCOMMERCIAL.txt Section 4(c) for the full restriction.
+
+Users are solely responsible for compliance with all applicable
+federal, state, and local laws governing their use of the Dataset.
+
+No Endorsement
+
+Use of this Dataset does not imply endorsement, sponsorship, or
+affiliation by Torc Robotics, Inc. You may not represent or imply that
+Torc Robotics, Inc. has approved or endorsed Your use without prior written
+consent.
+
+Contact
+
+General inquiries: []
+Commercial licensing: licensing@torc.ai
+Privacy and takedown requests: privacy@torc.ai
+Dataset website: torc.github.io/TruckDrive
+

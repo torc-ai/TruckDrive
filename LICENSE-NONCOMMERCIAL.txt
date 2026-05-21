@@ -1,0 +1,364 @@
+TORC ROBOTICS TRUCKDRIVE DATASET
+NON-COMMERCIAL LICENSE
+
+Version 0.1 — Effective May 1, 2026
+
+Copyright (c) 2026 TORC ROBOTICS, INC. All rights reserved.
+
+By exercising the Licensed Rights (defined below), You accept and agree
+to be bound by the terms and conditions of this Non-Commercial License
+("License"). To the extent this License may be interpreted as a
+contract, You are granted the Licensed Rights in consideration of Your
+acceptance of these terms and conditions, and the Licensor grants You
+such rights in consideration of benefits the Licensor receives from
+making the Licensed Material available under these terms and conditions.
+
+
+SECTION 1 — DEFINITIONS
+
+As used in this License:
+
+"Adapted Material" means material subject to copyright or similar
+rights that is derived from or based upon the Licensed Material and in
+which the Licensed Material is translated, altered, arranged,
+transformed, or otherwise modified in a manner requiring permission
+under the copyright or similar rights held by the Licensor. For
+purposes of this License, Adapted Material includes any dataset, model,
+work, or output that incorporates, is trained on, fine-tuned on, or is
+otherwise derived in whole or in part from the Licensed Material,
+including but not limited to machine learning model weights, embeddings,
+and synthetic data generated using the Licensed Material.
+
+"Commercial Use" has the meaning set forth in Section 2.
+
+"Licensed Material" means the autonomous vehicle sensor data,
+annotations, labels, metadata, and associated documentation to which
+the Licensor has applied this License, published at torc.github.io/TruckDrive
+and any mirrors or distributions thereof.
+
+"Licensed Rights" means the rights granted to You subject to the terms
+and conditions of this License, which are limited to all copyright and
+similar rights that apply to Your use of the Licensed Material and that
+the Licensor has authority to license.
+
+"Licensor" means Torc Robotics, Inc. and its affiliates.
+
+"Non-Commercial Use" means any use of the Licensed Material or Adapted
+Material that does not constitute Commercial Use as defined in
+Section 2.
+
+"Share" means to provide material to the public by any means or process
+that requires permission under the Licensed Rights, such as
+reproduction, public display, public performance, distribution,
+dissemination, communication, or importation, and to make material
+available to the public including in ways that members of the public may
+access the material from a place and at a time individually chosen by
+them.
+
+"You" or "Your" means the individual or legal entity exercising the
+Licensed Rights under this License.
+
+
+SECTION 2 — DEFINITION OF COMMERCIAL USE
+
+"Commercial Use" means any use, reproduction, distribution, or
+modification of the Licensed Material or any Adapted Material, directly
+or indirectly, in connection with any of the following:
+
+(a) any product, service, software, or system offered for sale,
+license, subscription, or other commercial arrangement to third parties;
+
+(b) internal research, development, testing, or validation activities
+conducted by or on behalf of any entity whose primary or substantial
+business involves the development, testing, commercialization, or
+deployment of autonomous, semi-autonomous, or driver-assistance vehicle
+systems, robotics systems, or related perception or planning software;
+
+(c) any activity intended to generate, or that does generate, revenue,
+monetary compensation, or material competitive advantage, whether
+directly or indirectly; or
+
+(d) use by any entity or individual acting as a contractor, consultant,
+or agent on behalf of any entity described in (a), (b), or (c) above,
+where the Licensed Material is used in connection with that engagement.
+
+The following are expressly NOT Commercial Use under this License:
+
+(i) academic research conducted at accredited, non-profit educational
+institutions, published or intended for publication in peer-reviewed
+venues, provided the Licensed Material is not used in connection with a
+commercial product or service;
+
+(ii) research conducted by government agencies and government-funded
+national laboratories for non-commercial governmental purposes;
+
+(iii) personal, hobbyist, or educational use by individuals with no
+intent to generate revenue from such use; and
+
+(iv) journalism and non-profit public interest research, provided no
+commercial product or service incorporates the Licensed Material or any
+Adapted Material.
+
+(v) benchmarking conducted for the purposes of academic or applied 
+research publication, where the benchmarking results are not directly 
+incorporated into a commercial product or service.
+
+If You are uncertain whether Your use qualifies as Non-Commercial Use,
+You must obtain written confirmation from the Licensor before
+proceeding. Contact: licensing@torc.ai.
+
+
+SECTION 3 — LICENSE GRANT
+
+Subject to the terms and conditions of this License, the Licensor
+hereby grants You a worldwide, royalty-free, non-sublicensable,
+non-exclusive, irrevocable license to exercise the Licensed Rights in
+the Licensed Material to:
+
+(a) reproduce and Share the Licensed Material, in whole or in part,
+for Non-Commercial Use only; and
+
+(b) produce, reproduce, and Share Adapted Material for Non-Commercial
+Use only.
+
+The above rights are granted subject to the conditions in Section 4.
+Nothing in this License constitutes or may be construed as permission
+to assert or imply that You are, or that Your use of the Licensed
+Material is, connected with, or sponsored, endorsed, or granted
+official status by, the Licensor.
+
+
+SECTION 4 — LICENSE CONDITIONS
+
+Your exercise of the Licensed Rights is expressly made subject to the
+following conditions.
+
+4(a) Attribution.
+
+If You Share the Licensed Material (including in modified form), You
+must:
+
+(i) retain the following if it is supplied by the Licensor with the
+Licensed Material: identification of the creator of the Licensed
+Material; a copyright notice; a notice that refers to this License; a
+notice that refers to the disclaimer of warranties; a URI or hyperlink
+to the Licensed Material to the extent reasonably practicable;
+
+(ii) indicate if You modified the Licensed Material and retain an
+indication of any previous modifications;
+
+(iii) indicate the Licensed Material is licensed under this License,
+and include the text of, or the URI or hyperlink to, this License; and
+
+(iv) include the following attribution notice in a location reasonably
+likely to be seen by recipients:
+
+    "TruckDrive, provided by Torc Robotics, Inc., available at torc.github.io/TruckDrive,
+    used under the Torc Robotics Non-Commercial License v1.0."
+
+For academic publications, You must cite the Licensed Material using
+the format provided in CITATION.cff in the repository.
+
+You may satisfy the conditions in Section 4(a) in any reasonable
+manner based on the medium, means, and context in which You Share the
+Licensed Material. For example, it may be reasonable to satisfy the
+conditions by providing a URI or hyperlink to a resource that includes
+the required information.
+
+4(b) Non-Commercial Use Restriction.
+
+You may not exercise the Licensed Rights for Commercial Use. If Your
+use of the Licensed Material constitutes Commercial Use, You must
+obtain a separate written commercial license from the Licensor before
+proceeding. See Section 7 and LICENSE-COMMERCIAL.txt.
+
+4(c) No Motor Vehicle Records Queries.
+
+You may not use any vehicle license plate data contained in the
+Licensed Material to query any motor vehicle records database, whether
+maintained by a government agency or a private party, or to attempt to
+identify the owner, registrant, operator, or passenger of any vehicle.
+Any such use is a material breach of this License and will result in
+automatic termination under Section 8.
+
+4(d) No Endorsement.
+
+You may not publicly represent or imply that the Licensor is
+participating in, has sponsored, approved, or endorsed the manner or
+purpose of Your use or reproduction of the Licensed Material without
+the Licensor's prior written consent. The Licensor may pursue, to the
+fullest extent of the law, any use of the Licensed Material that
+falsifies, misrepresents, disparages, or fraudulently uses the Licensed
+Material.
+
+4(e) No Association.
+
+You may not use the Licensor's name, any trademark, official mark,
+logo, or other means of promotion or publicity without the Licensor's
+prior written consent, nor in any event to represent or imply an
+association or affiliation with the Licensor.
+
+4(f) Compliance with Law.
+
+You are solely responsible for ensuring that Your use of the Licensed
+Material complies with all applicable federal, state, and local laws,
+including any applicable privacy, data protection, biometric, and motor
+vehicle records laws. You agree to take reasonable steps to assist the
+Licensor in fulfilling any obligations arising from Your use of the
+Licensed Material.
+
+4(g) No Additional Restrictions.
+
+You may not apply legal terms or technological measures to the Licensed
+Material or Adapted Material that you Share that restrict recipients
+from exercising the rights granted under this License.
+
+4(h) Downstream Recipients.
+
+Every recipient of the Licensed Material or Adapted Material from You
+automatically receives the same rights from the Licensor under this
+License. You may not impose additional or different terms or conditions
+on the Licensed Material that restrict exercise of the rights granted
+under this License. You are not responsible for enforcing compliance by
+third parties with this License.
+
+
+SECTION 5 — DATA CONTENT NOTICE
+
+The Licensed Material consists of annotated autonomous vehicle driving
+data collected on public roads in the United States, excluding footage
+collected in Illinois and California. The Licensed Material includes
+3D and 2D annotations, calibration data, localization poses, and
+associated metadata. Raw sensor streams are not distributed as part
+of the Licensed Material.
+
+The annotation data references objects captured in public road
+environments. By downloading or using the Licensed Material, You
+acknowledge that You are aware of this and accept sole responsibility
+for compliance with all applicable laws governing Your use.
+
+
+SECTION 6 — DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY
+
+6(a) Disclaimer of Warranties.
+
+UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT
+POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND
+AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND
+CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY,
+OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE,
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT,
+ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR
+ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE
+DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS
+DISCLAIMER MAY NOT APPLY TO YOU.
+
+6(b) Limitation of Liability.
+
+TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU
+ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR
+OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL,
+PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES
+ARISING OUT OF THIS LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF
+THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS,
+EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN
+FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.
+
+6(c) Scope of Disclaimer and Limitation.
+
+The disclaimer of warranties and limitation of liability provided above
+shall be interpreted in a manner that, to the extent possible,
+approximates an absolute disclaimer and waiver of all liability.
+
+
+SECTION 7 — INDEMNIFICATION
+
+You agree to indemnify, defend, and hold harmless the Licensor and its
+affiliates, directors, employees, and agents from and against any and
+all claims, liabilities, damages, losses, costs, and expenses
+(including reasonable attorneys' fees) arising out of or relating to:
+(a) Your use or misuse of the Licensed Material; (b) Your violation of
+this License; (c) Your violation of any applicable law; or (d) any
+third-party claim arising from Your use or distribution of the Licensed
+Material or any Adapted Material.
+
+
+SECTION 8 — TERM AND TERMINATION
+
+8(a) This License applies for the term of the copyright and similar
+rights licensed here. However, if You fail to comply with this License,
+then Your rights under this License terminate automatically and
+immediately without notice.
+
+8(b) Where Your right to use the Licensed Material has terminated under
+Section 8(a), it does not reinstate automatically. The Licensor
+reserves sole discretion over whether to reinstate terminated rights
+and is under no obligation to do so.
+
+8(c) The Licensor may terminate Your rights under this License at any
+time, with or without cause, with or without notice, effective
+immediately. Upon termination for any reason, You must cease all use of
+the Licensed Material and destroy all copies in Your possession or
+control.
+
+8(d) Sections 1, 2, 4(d), 4(e), 5, 6, 7, and 9 survive termination
+of this License.
+
+
+SECTION 9 — COMMERCIAL LICENSING
+
+The Licensor expressly reserves the right to license the Licensed
+Material for Commercial Use under separate written agreements. Nothing
+in this License shall be construed to limit the Licensor's ability to
+grant commercial licenses to other parties on any terms the Licensor
+chooses. To inquire about a commercial license, contact
+licensing@torc.ai.
+See LICENSE-COMMERCIAL.txt for further information.
+
+
+SECTION 10 — OTHER TERMS AND CONDITIONS
+
+10(a) Governing Law. This License is governed by and construed in
+accordance with the laws of the State of New York, without regard to its
+conflict of law principles.
+
+10(b) Dispute Resolution. Any dispute arising out of or relating to
+this License or the Licensed Material shall be resolved exclusively in
+the state or federal courts located in New York County (Manhattan). You consent to
+the personal jurisdiction of such courts. Any cause of action arising
+out of or related to this License or the Licensed Material must be
+commenced within two (2) years after the cause of action arose;
+otherwise it is permanently barred.
+
+10(c) Entire Agreement. This License, together with COMMERCIAL-USE-
+POLICY.txt, constitutes the entire
+agreement between You and the Licensor with respect to Your
+Non-Commercial Use of the Licensed Material.
+
+10(d) Severability. If any provision of this License is found
+unenforceable, it shall be modified to the minimum extent necessary to
+make it enforceable, and the remaining provisions shall continue in
+full force and effect.
+
+10(e) No Waiver. The Licensor's failure to enforce any provision of
+this License shall not constitute a waiver of its rights.
+
+10(f) Amendment. The Licensor may amend this License from time to time
+at its sole discretion. Continued use of the Licensed Material
+following publication of an amended version constitutes acceptance of
+the amended terms. License versions are tracked in the repository's
+git history.
+
+10(g) Assignment. The Licensor may assign its rights and obligations
+under this License without Your consent. You may not assign Your rights
+under this License.
+
+10(h) No Agency. No agency, partnership, joint venture, or employment
+relationship is created as a result of this License, and neither party
+has authority to bind the other outside the terms of this License.
+
+10(i) Third-Party Data. Certain components of the Licensed Material
+may include data derived from or provided by third parties subject to
+terms separate from this License. Where applicable, those terms are
+identified in THIRD-PARTY-NOTICES.txt and control in the event of any
+conflict with this License.

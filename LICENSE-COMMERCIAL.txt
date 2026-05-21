@@ -1,0 +1,52 @@
+Commercial Licensing
+
+TORC ROBOTICS TRUCKDRIVE DATASET
+
+Is a Commercial License Required?
+
+If Your use of the Dataset constitutes Commercial Use as defined in
+LICENSE-NONCOMMERCIAL.txt, You must obtain a commercial license before
+accessing or using any data.
+
+See COMMERCIAL-USE-POLICY.txt for a plain-language guide to determining
+whether Your use qualifies as commercial.
+
+What a Commercial License Covers
+
+A commercial license grants rights beyond those available under the
+Torc Robotics Non-Commercial License v1.0, including:
+
+- Use of the Dataset in connection with commercial products, services,
+  or internal R&D at autonomous vehicle and related technology companies
+- Training, fine-tuning, or evaluating commercial machine learning
+  models using the Dataset
+- Integration of the Dataset or Adapted Material into commercial
+  software or data pipelines
+- Use by contractors and consultants working on behalf of commercial
+  entities
+
+Commercial license terms are negotiated based on the nature, scope,
+and duration of use.
+
+How to Obtain a Commercial License
+
+Email: licensing@torc.ai
+
+Please include the following in your initial inquiry:
+
+1. Your organization's name and primary business description
+2. A description of your intended use of the Dataset
+3. The anticipated scope and duration of use
+4. Whether you intend to distribute Adapted Material
+
+
+Existing Non-Commercial Users
+
+If You are currently using the Dataset under the Non-Commercial License
+and Your circumstances change such that Your use becomes Commercial Use,
+You must cease commercial use immediately and contact the Licensor to
+obtain appropriate licensing before continuing.
+
+Contact licensing@torc.ai
+
+Copyright (c) 2026 Torc Robotics, Inc. All rights reserved.

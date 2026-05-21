@@ -1,0 +1,133 @@
+Commercial Use Policy
+
+TORC ROBOTICS TRUCKDRIVE DATASET
+Version 0.1 — Effective May 1, 2026
+
+This document provides a plain-language guide to the definition of
+Commercial Use in LICENSE-NONCOMMERCIAL.txt (the "License"). It is
+incorporated into and forms part of the License. In the event of any
+conflict between this document and LICENSE-NONCOMMERCIAL.txt, the
+License controls.
+
+The Core Question
+
+Ask yourself: Is this Dataset being used, directly or indirectly, to
+build, improve, or support anything that generates or is intended to
+generate revenue or competitive advantage?
+
+If yes, it is almost certainly Commercial Use and requires a commercial
+license.
+
+Clearly Non-Commercial (No Commercial License Required)
+
+Academic research at non-profit universities and institutions
+A PhD student or faculty researcher using the Dataset to publish a
+paper on perception algorithms, even if the paper is later cited by
+industry, is Non-Commercial Use. This applies even if the researcher
+is employed part-time at a company, as long as the Dataset is not used
+in that commercial capacity.
+
+Benchmarking for research publication
+Use of the Dataset to perform benchmarking for the purposes of academic
+or applied research publication is Non-Commercial Use, provided that
+the benchmarking results are not used to develop, train, validate, or
+improve a commercial product or service. Evaluating model performance
+on TruckDrive and publishing those results in a conference paper or
+journal article is Non-Commercial Use, regardless of whether the
+publishing party is an academic institution or a commercial entity. Use
+of the same benchmarking results to guide internal product development
+is Commercial Use, regardless of whether a paper is also published.
+
+Government research
+Use by federal, state, or local government agencies or government-
+funded national laboratories for governmental, non-commercial purposes
+is permitted.
+
+Personal and hobbyist use
+An individual learning computer vision or robotics for personal
+development, with no intent to commercialize the output, is
+Non-Commercial Use.
+
+Journalism and public interest research
+A journalist or non-profit organization using the Dataset to analyze
+and publish findings about autonomous vehicle safety, with no
+commercial product incorporating the Dataset, is Non-Commercial Use.
+
+Teaching
+Use in university coursework or educational materials, where students
+are not commercializing outputs, is Non-Commercial Use.
+
+Clearly Commercial (Commercial License Required)
+
+Autonomous vehicle companies
+Any company whose business involves developing, testing, or selling
+autonomous or semi-autonomous vehicle systems, driver-assistance
+technology, robotics, or related perception or planning software must
+obtain a commercial license. This applies to internal R&D use, even
+if no product directly incorporates the Dataset.
+
+Training commercial models
+Using the Dataset to train, fine-tune, or validate a machine learning
+model that is then deployed in a commercial product or service requires
+a commercial license, regardless of whether the Dataset itself is
+distributed.
+
+Startups and spinouts
+A startup founded to commercialize research, even if not yet generating
+revenue, is engaged in Commercial Use if the Dataset informs product
+development.
+
+Contractors and consultants
+If You are working on behalf of a commercial entity and using the
+Dataset in that engagement, Your use is Commercial Use even if you
+personally are an academic or independent researcher.
+
+Benchmark and evaluation services
+Using the Dataset as part of a paid benchmarking, evaluation, or data
+labeling service is Commercial Use.
+
+Internal use at technology companies
+A software or technology company using the Dataset for internal
+purposes, even if those purposes are described as "research," is
+engaged in Commercial Use if the company's business is commercial in
+nature and the use relates to that business.
+
+Gray Areas and How We Handle Them
+
+Pre-competitive consortia
+Use of the Dataset in a multi-party research consortium depends on the
+consortium's structure and outputs. Contact us before proceeding.
+
+Open-source projects
+Publishing code or models trained on the Dataset as open source does
+not, by itself, make the use non-commercial. If the open-source project
+is backed by or intended to support a commercial entity, a commercial
+license is required.
+
+Government contractors
+Private companies operating as government contractors should contact
+us. Whether their use is commercial depends on the nature of the
+contract and the use of outputs.
+
+When in Doubt
+
+If You are uncertain whether Your use is Commercial Use, do not proceed
+without first contacting us. We will respond promptly and, where use
+is genuinely ambiguous, will work to find an appropriate path forward.
+
+Contact: licensing@torc.ai
+
+Proceeding with use that turns out to be Commercial Use without a
+license is a material breach of the License and may result in
+termination of Your rights and legal liability.
+
+Policy Versioning
+
+This policy is versioned alongside the Dataset. If You downloaded the
+Dataset under a prior version of this policy, the version in effect at
+the time of Your download governs Your use, except that the Licensor
+may require You to comply with updated terms upon notice if a new
+version materially changes the commercial definition. Versions are
+tracked in the repository's git history.
+
+Copyright (c) 2026 Torc Robotics, Inc. All rights reserved.

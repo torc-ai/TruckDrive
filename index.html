@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TruckDrive is a long-range autonomous highway driving dataset for heavy-truck safety and perception.">
+  <meta name="keywords" content="TruckDrive, autonomous driving, highway driving, long-range perception dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TruckDrive: Long-Range Autonomous Highway Driving Dataset</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/truck_wheelie.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body id="top">
+
+<section class="hero-image-section hero-image-section-simple">
+  <div class="hero-image-shell">
+    <img src="./static/images/truckdrive-hero.jpg"
+         alt="TruckDrive long-range autonomous highway driving dataset hero image"
+         class="hero-image-main">
+    <div class="hero-image-overlay"></div>
+    <h1 class="sr-only">TruckDrive: Long-Range Autonomous Highway Driving Dataset</h1>
+  </div>
+
+  <div class="hero-floating-wrap js-hero-floating-wrap">
+    <div class="container is-max-desktop">
+      <div class="hero-floating-card js-hero-floating-card">
+        <div class="hero-floating-main">
+          <h1 class="title is-1 publication-title hero-floating-title">
+            TruckDrive: Long-Range Autonomous Highway Driving Dataset
+          </h1>
+
+          <div class="is-size-5 publication-authors hero-floating-authors">
+            <span class="author-block">Filippo Ghilotti,</span>
+            <span class="author-block">Edoardo Palladin,</span>
+            <span class="author-block">Samuel Brucker,</span>
+            <span class="author-block">Adam Sigal,</span>
+            <span class="author-block">Mario Bijelic,</span>
+            <span class="author-block">Felix Heide</span>
+          </div>
+
+          <div class="is-size-5 publication-authors hero-floating-venue">
+            <span class="author-block">CVPR 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-floating-actions">
+          <div class="publication-links hero-floating-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2603.02413"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2603.02413"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Devkit</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="far fa-images"></i>
+                </span>
+                <span>Data</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <button type="button"
+                      class="button is-normal is-rounded is-dark js-bibtex-open">
+                <span class="icon">
+                  <i class="fas fa-quote-right"></i>
+                </span>
+                <span>BibTeX</span>
+              </button>
+            </span>
+            <span class="link-block">
+              <a href="#top"
+                 class="external-link button is-normal is-rounded is-dark hero-back-top-link js-hero-back-top">
+                <span class="icon">
+                  <i class="fas fa-arrow-up"></i>
+                </span>
+                <span>Top</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop why-truckdrive-section">
+    <div class="why-truckdrive-header">
+      <h2 class="title is-3">TruckDrive: Beyond Driving with Short-Range Perception</h2>
+
+      <div class="content has-text-justified why-truckdrive-text">
+        <p>
+          Existing autonomous driving datasets are largely centered on urban and short-range perception settings.
+          In contrast, TruckDrive focuses on long-range highway autonomy, where safe planning requires reliable
+          scene understanding hundreds of meters ahead, introducing a substantially different operating regime:
+          long stopping distances, far-range observations, difficult weather and a strong dependence on high-quality
+          multimodal sensing.
+        </p>
+
+        <p>
+          TruckDrive extends perception to 400 meters with a significantly higher density of labeled instances at
+          long range. Compared to prior datasets, it maintains a more balanced distribution across distances and
+          captures higher-speed and longer trajectories, reflecting the demands of safe highway driving.
+        </p>
+
+        <p class="why-truckdrive-note">
+          <b>Across instances, speeds, and trajectories, TruckDrive occupies a regime that is underrepresented in prior benchmarks. Click through
+            the graphs below to see the comparisons more clearly!
+          </b>
+        </p>
+      </div>
+    </div>
+
+    <div class="why-animated-panel js-why-animated-panel">
+      <div class="why-plot-legend js-why-plot-legend">
+        <div class="why-legend-item" data-dataset="NuScenes">
+          <span class="why-legend-line" style="background:#5AA8CC;"></span>
+          <span class="why-legend-label">NuScenes</span>
+        </div>
+        <div class="why-legend-item" data-dataset="Argoverse 2">
+          <span class="why-legend-line" style="background:#767676;"></span>
+          <span class="why-legend-label">Argoverse 2</span>
+        </div>
+        <div class="why-legend-item" data-dataset="Waymo">
+          <span class="why-legend-line" style="background:#A358A4;"></span>
+          <span class="why-legend-label">Waymo</span>
+        </div>
+        <div class="why-legend-item" data-dataset="MANTruckScenes">
+          <span class="why-legend-line" style="background:#2F6F9F;"></span>
+          <span class="why-legend-label">MANTruckScenes</span>
+        </div>
+        <div class="why-legend-item" data-dataset="aiMotive">
+          <span class="why-legend-line" style="background:#4C9F70;"></span>
+          <span class="why-legend-label">aiMotive</span>
+        </div>
+        <div class="why-legend-item" data-dataset="TruckDrive">
+          <span class="why-legend-line why-legend-line-truckdrive" style="background:#CE7270;"></span>
+          <span class="why-legend-label">TruckDrive</span>
+        </div>
+      </div>
+
+      <div class="why-plot-layout why-plot-layout-featured">
+
+        <div
+          class="why-plot-card js-why-plot-card is-featured"
+          data-plot-id="range"
+          data-frames='[
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_01_nuscenes.png",
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_02_argoverse_2.png",
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_03_waymo.png",
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_04_mantruckscenes.png",
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_05_aimotive.png",
+            "./static/images/box_distance_log/instance_distance_distribution_logy_frame_06_truckdrive.png"
+          ]'>
+          <div class="why-plot-title">Instance Range Distribution</div>
+
+          <div class="plot-html-labels">
+            <div class="plot-y-label">Instance Count Scale</div>
+
+            <div class="plot-main-area">
+              <img
+                class="why-plot-image js-why-plot-image"
+                src="./static/images/box_distance_log/instance_distance_distribution_logy_frame_01_nuscenes.png"
+                alt="Instances distance from ego comparison across datasets.">
+            </div>
+
+            <div class="plot-x-label">Instances Distance from Ego [m]</div>
+          </div>
+        </div>
+
+        <div class="why-plot-side-stack">
+
+          <div
+            class="why-plot-card js-why-plot-card is-side"
+            data-plot-id="speed"
+            data-frames='[
+              "./static/images/speed/ego_speed_distribution_frame_01_nuscenes.png",
+              "./static/images/speed/ego_speed_distribution_frame_02_argoverse_2.png",
+              "./static/images/speed/ego_speed_distribution_frame_03_waymo.png",
+              "./static/images/speed/ego_speed_distribution_frame_04_mantruckscenes.png",
+              "./static/images/speed/ego_speed_distribution_frame_05_aimotive.png",
+              "./static/images/speed/ego_speed_distribution_frame_06_truckdrive.png"
+            ]'>
+            <div class="why-plot-title">Ego Speed Distribution</div>
+
+            <div class="plot-html-labels">
+              <div class="plot-y-label">Scene Count Scale</div>
+
+              <div class="plot-main-area">
+                <img
+                  class="why-plot-image js-why-plot-image"
+                  src="./static/images/speed/ego_speed_distribution_frame_01_nuscenes.png"
+                  alt="Mean ego speed comparison across datasets.">
+              </div>
+
+              <div class="plot-x-label">Mean Ego Speed [km/h]</div>
+            </div>
+          </div>
+
+          <div
+            class="why-plot-card js-why-plot-card is-side"
+            data-plot-id="trajectory"
+            data-frames='[
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_01_nuscenes.png",
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_02_argoverse_2.png",
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_03_waymo.png",
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_04_mantruckscenes.png",
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_05_aimotive.png",
+              "./static/images/trajectory_length/trajectory_length_distribution_frame_06_truckdrive.png"
+            ]'>
+            <div class="why-plot-title">Scene Length Distribution</div>
+
+            <div class="plot-html-labels">
+              <div class="plot-y-label">Scene Count Scale</div>
+
+              <div class="plot-main-area">
+                <img
+                  class="why-plot-image js-why-plot-image"
+                  src="./static/images/trajectory_length/trajectory_length_distribution_frame_01_nuscenes.png"
+                  alt="Trajectory length comparison across datasets.">
+              </div>
+
+              <div class="plot-x-label">Trajectory Length [m]</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light abstract-paper-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-vcentered is-variable is-6">
+
+      <div class="column is-7">
+        <h2 class="title is-3">Summary</h2>
+        <div class="content has-text-justified">
+          <p>
+            Safe highway autonomy for heavy trucks remains an open and unsolved challenge: due to long braking
+            distances, scene understanding of hundreds of meters is required for anticipatory planning and to
+            allow safe braking margins. However, existing driving datasets primarily cover urban scenes, with
+            perception effectively limited to short ranges of only up to 100 meters. To address this gap, we
+            introduce TruckDrive, a highway-scale multimodal driving dataset captured with a sensor suite
+            purpose-built for long-range sensing: seven long-range FMCW LiDARs measuring range and radial
+            velocity, three high-resolution short-range LiDARs, eleven 8MP surround cameras with varying focal
+            lengths, and ten 4D FMCW radars. The dataset offers 475k samples with 165k densely annotated frames
+            for driving perception benchmarking up to 1,000 meters for 2D detection and 400 meters for 3D
+            detection, depth estimation, tracking, planning, and end-to-end driving over 20-second sequences at
+            highway speeds. We find that state-of-the-art autonomous driving models do not generalize to ranges
+            beyond 150 meters, with drops between 31% and 99% in 3D perception tasks, exposing a systematic
+            long-range gap that current architectures and training signals cannot close.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-5 has-text-centered">
+        <a href="https://arxiv.org/pdf/2603.02413"
+           target="_blank"
+           class="paper-preview-link">
+          <img src="./static/images/paper_preview.png"
+               alt="TruckDrive paper preview"
+               class="paper-preview-image">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Example Scenes</h2>
+          <div class="content has-text-justified">
+            <!-- <p>
+              Below we show videos showing....
+            </p> -->
+          </div>
+        </div>
+      </div>
+      <div class="scene-tabs js-scene-tabs stable-video-tabs" id="example-scene-tabs">
+        <div class="scene-tab-buttons">
+          <button class="scene-tab-button is-active"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_10fps_x8down_compressed_highway2.mp4"
+                  data-caption="Four-lane highway scene with full-range dynamic actors and an ego-vehicle lane change.">
+            Lane Change
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_10fps_x8down_compressed_merging22.mp4"
+                  data-caption="On-ramp driving with traffic merging from the left on a curved road at dawn.">
+            Ramp Merge
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_10fps_x8down_compressed_night.mp4"
+                  data-caption="Night scene with cluttered backward view and moderate traffic.">
+            Night Traffic
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_10fps_x8down_compressed_overtake.mp4"
+                  data-caption="Left-side overtaking of a lead vehicle.">
+            Overtake
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_5fps_x8down_compressed_elbow.mp4"
+                  data-caption="Partially static intersection scene with a 90-degree left turn at a green traffic light.">
+            Left Turn
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_5fps_x8down_compressed_intersection.mp4"
+                  data-caption="Highly cluttered scene with many surrounding actors and deceleration toward an intersection traffic light.">
+            Intersection Stop
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_5fps_x8down_compressed_ramp.mp4"
+                  data-caption="On-ramp driving with a left merge onto the highway.">
+            Highway Merge
+          </button>
+          <button class="scene-tab-button"
+                  data-video="./static/videos/example_scenes/mosaic_trailer_chat_video_5fps_x8down_compressed_urb.mp4"
+                  data-caption="One-lane urban road with vegetation landmarks, a motorcyclist, and a car carrier truck.">
+            Urban Lane
+          </button>
+        </div>
+
+        <div class="scene-tab-video-wrapper">
+          <video class="scene-tab-video js-scene-tab-video"
+                 autoplay
+                 muted
+                 loop
+                 controls
+                 playsinline
+                 preload="auto">
+            <source src="./static/videos/example_scenes/mosaic_trailer_chat_video_10fps_x8down_compressed_highway2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="scene-tab-description js-scene-tab-description">
+          Four-lane highway scene with full-range dynamic actors and an ego-vehicle lane change.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Sensor Suite Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our sensor suite, mounted on a semi-truck, is optimized
+            for reliable perception in high-speed environments. Specifically, we employ seven FMCW LiDARs (AEVA Aeries II),
+            capable of measuring up to 400 meters and providing radial velocity; three short-range LiDARs (Ouster OS0/OS1),
+            to cover blind spots and objects very close to the
+            ego vehicle; and ten 4D radars (Conti ARS540). Additionally, 11
+            to 15 RCCB cameras, depending on the configuration, with 9
+            short-/medium-focal cameras and 1 to 3 long-focal stereo cameras, provide
+            high-resolution imaging (8MP) at all ranges.
+            
+            <b>Use the buttons below to visualize the placement and coverage of each sensor family on the platform.</b>
+          </p>
+        </div>
+
+        <div class="sensor-toggle-block js-sensor-toggle-block">
+          <div class="sensor-toggle-buttons">
+            <button class="sensor-toggle-button" data-target="radars">
+              Radars
+            </button>
+            <button class="sensor-toggle-button" data-target="lidars">
+              LiDARs
+            </button>
+            <button class="sensor-toggle-button" data-target="cameras">
+              Cameras
+            </button>
+          </div>
+
+          <div class="sensor-toggle-figure">
+            <img
+              src="./static/images/Truck.png"
+              alt="Base truck platform"
+              class="sensor-toggle-layer sensor-toggle-base">
+
+            <img
+              src="./static/images/Truck_Camera.png"
+              alt="Camera overlay"
+              class="sensor-toggle-layer sensor-toggle-overlay"
+              data-layer="cameras">
+
+            <img
+              src="./static/images/Truck_Lidar.png"
+              alt="LiDAR overlay"
+              class="sensor-toggle-layer sensor-toggle-overlay"
+              data-layer="lidars">
+
+            <img
+              src="./static/images/Truck_Radar.png"
+              alt="Radar overlay"
+              class="sensor-toggle-layer sensor-toggle-overlay"
+              data-layer="radars">
+          </div>
+
+          <p class="sensor-toggle-description js-sensor-toggle-description">
+            Click the buttons above to highlight the corresponding sensor families and their coverage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">FMCW LiDAR Technology</h2>
+        <div class="content has-text-justified">
+          <p>
+            The LiDARs in our setup rely on Frequency-Modulated Continuous-Wave (FMCW) technology,
+            which makes them robust to adverse weather conditions and enables the capture of instantaneous radial velocity \(v_r\)
+            for each point in the point cloud.
+          </p>
+
+          <p style="text-align: center;">
+            \[
+            v_r = \frac{\Delta \phi \cdot \lambda}{4\pi}\cos{\theta}
+            \]
+          </p>
+
+          <p>
+            where \( \lambda \) is the wavelength and \( \theta \) is the angle of incidence.
+          </p>
+        </div>
+        
+        <h3 class="title is-4">Moving Objects Through FMCW Velocity</h3>
+          <div class="content has-text-justified">
+            <p>
+              <b>Drag the slider to reveal moving objects.</b>
+            </p>
+          </div>
+
+
+          <div class="video-compare-wrapper js-video-compare fmcw-velocity-compare">
+            <div class="video-compare-container">
+              <video
+                class="compare-video js-video-bottom"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+                <source src="./static/videos/lidar_aeva_velocity.mp4" type="video/mp4">
+              </video>
+
+              <video
+                class="compare-video compare-video-top js-video-top"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+                <source src="./static/videos/lidar_aeva.mp4" type="video/mp4">
+              </video>
+
+              <div class="video-label video-label-left">
+                <span class="video-label-long">LiDAR Scan Geometry</span>
+                <span class="video-label-short">Geometry</span>
+              </div>
+              <div class="video-label video-label-right">
+                <span class="video-label-long">LiDAR Scan Geometry + Velocity</span>
+                <span class="video-label-short">Geometry + Velocity</span>
+              </div>
+
+              <div class="video-divider js-video-divider">
+                <div class="video-handle">
+                </div>
+              </div>
+            </div>
+
+            <input
+              class="js-video-slider video-compare-hitbox"
+              step="0.1"
+              min="0"
+              max="100"
+              value="50"
+              type="range"
+              aria-label="Video comparison slider">
+          </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Accumulated Depth Ground Truth</h2>
+        <div class="content has-text-justified">
+          <p>
+            To obtain reliable depth maps for evaluating both static and dynamic parts of the scene, we construct a high-quality ground
+            truth by combining LiDAR-based mapping and motion segmentation. Static geometry is recovered through globally consistent
+            LiDAR accumulation, while dynamic objects are identified via radial-velocity analysis and reinserted per frame. The
+            resulting depth maps provide temporally consistent, globally aligned, and densely annotated depth for all camera views.
+            
+          </p>
+        </div>
+        
+        <h3 class="title is-4">Sparse vs Accumulated LiDAR Comparison</h3>
+        <div class="content has-text-justified">
+          <p>
+            <b>Drag the slider to compare the sparse LiDAR scan with the accumulated ground truth.</b>
+          </p>
+        </div>
+
+
+        <div class="video-compare-wrapper js-video-compare">
+          <div class="video-compare-container">
+            <video
+              class="compare-video js-video-bottom"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto">
+              <source src="./static/videos/acc_lidar_web.mp4" type="video/mp4">
+            </video>
+
+            <video
+              class="compare-video compare-video-top js-video-top"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto">
+              <source src="./static/videos/sparse_lidar_web.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-label video-label-left">Sparse Scan</div>
+            <div class="video-label video-label-right">Accumulated Map</div>
+            <div class="video-divider js-video-divider">
+              <div class="video-handle">
+              </div>
+            </div>
+          </div>
+
+          <input
+            class="js-video-slider video-compare-hitbox"
+            step="0.1"
+            min="0"
+            max="100"
+            value="50"
+            type="range"
+            aria-label="Video comparison slider">
+        </div>
+
+        
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop why-truckdrive-section">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">How Do Existing Methods Perform on Long-Range Data?</h2>
+
+    <div class="why-truckdrive-bottom">
+      <!-- <h3 class="title is-4">Baseline failures on long-range data</h3> -->
+      <div class="content has-text-justified">
+        <p>
+          Crucially, TruckDrive exposes long-range perception challenges that remain largely unresolved by current state-of-the-art methods. As illustrated below, models designed for existing datasets exhibit 
+          systematic failures at long range, highlighting the need for datasets like TruckDrive that enable reliable evaluation and learning in this setting.
+
+          <b>Click a scene to switch the example.</b>
+        </p>
+      </div>
+
+      <div class="scene-tabs js-scene-tabs stable-video-tabs">
+        <div class="failure-tab-buttons">
+          <button class="scene-tab-button failure-tab-button is-active"
+                  data-video="./static/videos/baselines1n.mp4"
+                  data-caption="A lost cargo object appears at long range, illustrating a critical safety case that current methods may fail to detect reliably.">
+            Lost Cargo
+          </button>
+          <button class="scene-tab-button failure-tab-button"
+                  data-video="./static/videos/baselines2n.mp4"
+                  data-caption="A cluttered long-range scene with multiple actors and structures causes degraded perception and missed detections.">
+
+            Cluttered Scene
+          </button>
+          <button class="scene-tab-button failure-tab-button"
+                  data-video="./static/videos/baselines3n.mp4"
+                  data-caption="A complex intersection scene highlights failures in detection and planning for different types of motion.">
+
+            Intersection
+          </button>
+        </div>
+
+        <div class="scene-tab-video-wrapper">
+          <video id="baseline-scene-video"
+                class="scene-tab-video js-scene-tab-video"
+                autoplay
+                muted
+                loop
+                controls
+                playsinline
+                preload="auto">
+            <source src="./static/videos/baselines1n.mp4" type="video/mp4">
+          </video>
+        </div>
+      <p class="scene-tab-description js-scene-tab-description">
+        A lost cargo object appears at long range, illustrating a critical safety case that current methods may fail to detect reliably.
+      </p>
+      </div>
+    </div>
+
+    <div class="why-truckdrive-bottom end-to-end-section">
+      <h3 class="title is-4">End-to-End Driving on TruckDrive</h3>
+
+      <div class="content has-text-justified">
+        <p>
+          Long-range perception errors also propagate to planning. Current planners struggle to produce stable and accurate forecasts in TruckDrive's
+          long-range highway scenarios. In the examples below, the
+          ground-truth trajectory is shown in <span class="traj-green-text">green</span>
+          and the predicted trajectory in <span class="traj-orange-text">orange</span>.  <b>Click a scene or method to switch the example.</b>
+        </p>
+      </div>
+
+      <div class="planning-tabs js-planning-tabs">
+
+        <div class="failure-tab-buttons">
+          <button class="scene-tab-button failure-tab-button planning-scene-button is-active"
+                  data-scene="lost-cargo">
+            Lost Cargo
+          </button>
+
+          <button class="scene-tab-button failure-tab-button planning-scene-button"
+                  data-scene="cluttered">
+            Cluttered Scene
+          </button>
+
+          <button class="scene-tab-button failure-tab-button planning-scene-button"
+                  data-scene="intersection">
+            Intersection
+          </button>
+        </div>
+
+        <div class="failure-tab-buttons planning-method-buttons">
+          <button class="scene-tab-button failure-tab-button planning-method-button is-active"
+                  data-method="alpamayo">
+            Alpamayo
+          </button>
+
+          <button class="scene-tab-button failure-tab-button planning-method-button"
+                  data-method="uniad">
+            UniAD
+          </button>
+        </div>
+
+        <div class="planning-legend">
+          <div class="planning-legend-item">
+            <span class="traj-line traj-line-green">
+              <span></span><span></span><span></span>
+            </span>
+            <span>Ground Truth</span>
+          </div>
+
+          <div class="planning-legend-item">
+            <span class="traj-line traj-line-orange">
+              <span></span><span></span><span></span>
+            </span>
+            <span class="js-planning-method-label">Alpamayo Planning</span>
+          </div>
+
+          <div class="planning-legend-item planning-reasoning-legend js-reasoning-legend">
+            <span class="reasoning-pill">reasoning</span>
+            <span>Alpamayo reasoning trace</span>
+          </div>
+        </div>
+
+        <div class="scene-tab-video-wrapper">
+          <video class="scene-tab-video js-planning-video"
+                autoplay
+                muted
+                loop
+                controls
+                playsinline
+                preload="auto">
+            <source class="js-planning-source"
+              src="./static/videos/alpamayo/alpamayo_7016.mp4"
+              type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Publications</h2>
+
+          <div class="content has-text-justified">
+          <p>
+            See also our related publications addressing TruckDrive's long-range highway driving challenges, including ultra-long-range object detection and pretraining, pseudo-labeling, sensor fusion for adverse weather, scalable conditional video generation with pixel-wise losses and wide-baseline stereo rectification.     
+          </p>
+        </div>
+
+        <div class="paper-grid">
+
+          <!-- Paper 4 (NEW Telescope) -->
+          <a href="https://princeton-computational-imaging.github.io/Telescope/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/Telescope.png" alt="Telescope">
+            </div>
+            <div class="paper-title">
+              Telescope: Learnable Hyperbolic Foveation for Ultra-Long-Range Object Detection      
+            </div>
+          </a>
+
+          <a href="https://princeton-computational-imaging.github.io/ChopGrad/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/Chopgrad.png" alt="ChopGrad">
+            </div>
+            <div class="paper-title">
+              ChopGrad: Pixel-Wise Losses for Latent Video Diffusion via Truncated Backpropagation
+            </div>
+          </a>
+
+          <!-- Paper 2 -->
+          <a href="https://light.princeton.edu/publication/unilips/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/unilips.png" alt="UniLiPs">
+            </div>
+            <div class="paper-title">
+              UniLiPs: Unified LiDAR Pseudo-Labeling with Geometry-Grounded Dynamic Scene Decomposition
+            </div>
+          </a>
+
+          <!-- Paper 1 -->
+          <a href="https://light.princeton.edu/publication/lrs4fusion/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/LRS4Fusion.png" alt="LRS4Fusion">
+            </div>
+            <div class="paper-title">
+              LRS4Fusion: Self-Supervised Sparse Sensor Fusion for Long-Range Perception
+            </div>
+          </a>
+
+          <a href="https://light.princeton.edu/publication/samfusion/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/samfusion.png" alt="SAM Fusion">
+            </div>
+            <div class="paper-title">
+              SAMFusion: Sensor-Adaptive Multimodal Fusion for 3D Object Detection in Adverse Weather
+            </div>
+          </a>
+
+          <!-- Paper 3 -->
+          <a href="https://light.princeton.edu/publication/online-stereo-recification/" class="paper-card" target="_blank">
+            <div class="paper-thumb">
+              <img src="./static/images/FlowRect.png" alt="Stereo Rectification">
+            </div>
+            <div class="paper-title">
+              Flow-Guided Online Stereo Rectification for Wide Baseline Stereo
+            </div>
+          </a>
+
+
+
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+<section class="section dataset-license-section" id="dataset-license">
+  <div class="container is-max-desktop">
+    <div class="license-panel">
+
+      <div class="license-panel-header">
+        <div>
+          <p class="license-eyebrow">Dataset Release Terms</p>
+          <h2 class="title is-3 license-title">Dataset Access, Licensing & Download</h2>
+        </div>
+
+        <div class="license-header-actions">
+          <a href="mailto:licensing@torc.ai"
+            class="license-email-link">
+            <span class="icon">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span>licensing@torc.ai</span>
+          </a>
+
+          <a href="./LICENSE-NONCOMMERCIAL.txt"
+            class="button is-dark is-rounded license-main-button"
+            target="_blank">
+            <span class="icon">
+              <i class="fas fa-file-contract"></i>
+            </span>
+            <span>View Dataset License</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="content has-text-justified license-intro">
+        <p>
+          TruckDrive is released for non-commercial research use under the
+          <b>Torc Robotics Non-Commercial License v1.0</b>. Commercial use requires
+          a separate written license agreement with Torc Robotics.
+        </p>
+      </div>
+
+      <div class="license-card-grid">
+
+        <a class="license-card" href="./LICENSE-NONCOMMERCIAL.txt" target="_blank">
+          <div class="license-card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="license-card-body">
+            <h3>Non-Commercial Research</h3>
+            <p>
+              For academic, educational, government, hobbyist, journalism, and
+              non-profit public-interest uses permitted by the dataset license.
+            </p>
+            <span>Read non-commercial license</span>
+          </div>
+        </a>
+
+        <a class="license-card" href="./LICENSE-COMMERCIAL.txt" target="_blank">
+          <div class="license-card-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="license-card-body">
+            <h3>Commercial Use</h3>
+            <p>
+              Required for AV companies, commercial R&D, product development,
+              commercial model training, contractors, and related technology use.
+            </p>
+            <span>Commercial licensing details</span>
+          </div>
+        </a>
+
+        <a class="license-card" href="./COMMERCIAL-USE-POLICY.txt" target="_blank">
+          <div class="license-card-icon">
+            <i class="fas fa-scale-balanced"></i>
+          </div>
+          <div class="license-card-body">
+            <h3>Commercial Use Policy</h3>
+            <p>
+              A plain-language guide explaining whether a given use case is
+              considered non-commercial or commercial.
+            </p>
+            <span>Check usage policy</span>
+          </div>
+        </a>
+
+      </div>
+      <div class="dataset-access-panel" id="download">
+        <div class="dataset-access-header">
+          <p class="dataset-access-eyebrow">Dataset Download</p>
+          <h3 class="dataset-access-title">Access TruckDrive</h3>
+          <p class="dataset-access-text">
+            Please confirm that you have read the TruckDrive license terms before accessing the devkit or dataset files.
+          </p>
+        </div>
+
+        <label class="dataset-license-confirm">
+          <input type="checkbox" class="js-license-confirm">
+          <span>
+            I have read and agree to the TruckDrive license terms.
+          </span>
+        </label>
+
+        <div class="dataset-access-grid">
+
+          <a href=""
+            class="dataset-access-card js-license-gated is-disabled"
+            aria-disabled="true">
+            <div class="dataset-access-icon">
+              <i class="fas fa-database"></i>
+            </div>
+
+            <div class="dataset-access-body">
+              <h4>Dataset</h4>
+              <p>
+                Access the TruckDrive dataset release with long-range highway captures for perception, tracking, planning and end-to-end driving.
+              </p>
+              <span>Download dataset</span>
+            </div>
+          </a>
+          
+          <a href=""
+            class="dataset-access-card js-license-gated is-disabled"
+            aria-disabled="true">
+            <div class="dataset-access-icon">
+              <i class="fab fa-github"></i>
+            </div>
+
+            <div class="dataset-access-body">
+              <h4>Devkit</h4>
+              <p>
+                Download the official TruckDrive development kit with tools, data loaders, examples and visualization utilities.
+              </p>
+              <span>Open devkit</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{ghilotti2026truckdrive,
+  author    = {Ghilotti, Filippo and Palladin, Edoardo and Brucker, Samuel and Sigal, Adam and Bijelic, Mario and Heide, Felix},
+  title     = {TruckDrive: Long-Range Autonomous Highway Driving Dataset},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-torc-logo">
+      <a href="https://torc.ai/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Visit Torc Robotics">
+        <img src="./static/images/torc-logo-rd-reg.svg"
+             alt="Torc Robotics logo"
+             class="footer-torc-logo-image">
+      </a>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-left">
+          <p>
+            TruckDrive is released under the
+            <a href="./LICENSE-NONCOMMERCIAL.txt" target="_blank">Torc Robotics Non-Commercial License v1.0</a>.
+            Commercial use requires a separate written agreement; see
+            <a href="./LICENSE-COMMERCIAL.txt" target="_blank">Commercial Licensing</a> and the
+            <a href="./COMMERCIAL-USE-POLICY.txt" target="_blank">Commercial Use Policy</a>.
+            Please also review the
+            <a href="./NOTICE.txt" target="_blank">Dataset Notice</a>.
+          </p>
+          <p>
+            This website is adapted from the
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template
+            (<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const compareBlocks = document.querySelectorAll(".js-video-compare");
+
+  compareBlocks.forEach((block) => {
+    const slider = block.querySelector(".js-video-slider");
+    const divider = block.querySelector(".js-video-divider");
+    const topVideo = block.querySelector(".js-video-top");
+    const bottomVideo = block.querySelector(".js-video-bottom");
+    const container = block.querySelector(".video-compare-container");
+    const handleLabel = block.querySelector(".video-handle-pill");
+
+    if (!slider || !divider || !topVideo || !bottomVideo || !container) return;
+
+    function updateComparison(value) {
+      const v = Number(value);
+      const rightInset = 100 - v;
+
+      topVideo.style.clipPath = `inset(0 ${rightInset}% 0 0)`;
+      topVideo.style.webkitClipPath = `inset(0 ${rightInset}% 0 0)`;
+      divider.style.left = v + "%";
+
+      if (handleLabel) {
+        if (v < 10) handleLabel.textContent = "Left";
+        else if (v > 90) handleLabel.textContent = "Right";
+        else handleLabel.textContent = "Drag";
+      }
+    }
+
+    function setContainerAspectRatio() {
+      const w = bottomVideo.videoWidth || topVideo.videoWidth;
+      const h = bottomVideo.videoHeight || topVideo.videoHeight;
+      if (w > 0 && h > 0) {
+        container.style.aspectRatio = `${w} / ${h}`;
+      }
+    }
+
+    slider.addEventListener("input", function () {
+      updateComparison(this.value);
+    });
+
+    updateComparison(slider.value);
+
+    function syncToBottom() {
+      if (Math.abs(bottomVideo.currentTime - topVideo.currentTime) > 0.04) {
+        topVideo.currentTime = bottomVideo.currentTime;
+      }
+    }
+
+    bottomVideo.addEventListener("play", () => {
+      topVideo.play().catch(() => {});
+    });
+
+    bottomVideo.addEventListener("pause", () => {
+      topVideo.pause();
+    });
+
+    bottomVideo.addEventListener("seeking", syncToBottom);
+    bottomVideo.addEventListener("timeupdate", syncToBottom);
+
+    bottomVideo.addEventListener("ratechange", () => {
+      topVideo.playbackRate = bottomVideo.playbackRate;
+    });
+
+    bottomVideo.addEventListener("ended", () => {
+      topVideo.currentTime = 0;
+      topVideo.play().catch(() => {});
+    });
+
+    Promise.all([
+      new Promise(resolve => {
+        if (bottomVideo.readyState >= 1) resolve();
+        else bottomVideo.addEventListener("loadedmetadata", resolve, { once: true });
+      }),
+      new Promise(resolve => {
+        if (topVideo.readyState >= 1) resolve();
+        else topVideo.addEventListener("loadedmetadata", resolve, { once: true });
+      })
+    ]).then(() => {
+      setContainerAspectRatio();
+      topVideo.currentTime = bottomVideo.currentTime;
+      bottomVideo.play().catch(() => {});
+      topVideo.play().catch(() => {});
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sceneTabsBlocks = document.querySelectorAll(".js-scene-tabs");
+  if (!sceneTabsBlocks.length) return;
+
+  sceneTabsBlocks.forEach((sceneTabs) => {
+    const wrapper = sceneTabs.querySelector(".scene-tab-video-wrapper");
+    const buttons = Array.from(sceneTabs.querySelectorAll(".scene-tab-button"));
+    const initialVideo = sceneTabs.querySelector(".js-scene-tab-video");
+
+    if (!wrapper || !buttons.length || !initialVideo) return;
+
+    const description = sceneTabs.querySelector(".js-scene-tab-description");
+    const shouldShowControls = initialVideo.hasAttribute("controls");
+
+    let autoTimer = null;
+    let userInteracted = false;
+    let currentIndex = 0;
+    let activeVideo = initialVideo;
+    let bufferVideo = null;
+    let switchToken = 0;
+
+    function getVideoSrc(videoEl) {
+      const sourceEl = videoEl.querySelector("source");
+      return sourceEl ? sourceEl.getAttribute("src") : videoEl.getAttribute("src");
+    }
+
+    function setVideoSrc(videoEl, src) {
+      const sourceEl = videoEl.querySelector("source");
+
+      if (sourceEl) {
+        sourceEl.setAttribute("src", src);
+      } else {
+        videoEl.setAttribute("src", src);
+      }
+
+      videoEl.dataset.currentSrc = src;
+    }
+
+    function loadVideoSrc(videoEl, src) {
+      const previousSrc = getVideoSrc(videoEl);
+      setVideoSrc(videoEl, src);
+
+      if (previousSrc !== src || videoEl.readyState === 0) {
+        videoEl.load();
+      }
+    }
+
+    function prepareVideoElement(videoEl, isActive) {
+      videoEl.muted = true;
+      videoEl.loop = true;
+      videoEl.autoplay = true;
+      videoEl.preload = "auto";
+      videoEl.playsInline = true;
+      videoEl.setAttribute("playsinline", "");
+
+      videoEl.classList.toggle("is-active", isActive);
+      videoEl.classList.toggle("is-buffer", !isActive);
+      videoEl.controls = isActive && shouldShowControls;
+
+      if (isActive) {
+        videoEl.removeAttribute("aria-hidden");
+        videoEl.removeAttribute("tabindex");
+      } else {
+        videoEl.setAttribute("aria-hidden", "true");
+        videoEl.tabIndex = -1;
+      }
+    }
+
+    function createBufferVideo(template) {
+      const buffer = template.cloneNode(true);
+      buffer.removeAttribute("id");
+      prepareVideoElement(buffer, false);
+      return buffer;
+    }
+
+    function updateTextState(button) {
+      buttons.forEach((btn) => btn.classList.remove("is-active"));
+      button.classList.add("is-active");
+
+      if (description && button.dataset.caption) {
+        description.textContent = button.dataset.caption;
+      }
+    }
+
+    function waitForRenderableFrame(videoEl) {
+      if (videoEl.readyState >= 2 && videoEl.videoWidth > 0 && videoEl.videoHeight > 0) {
+        return Promise.resolve(true);
+      }
+
+      return new Promise((resolve) => {
+        let finished = false;
+        let timeoutId = null;
+
+        function cleanup() {
+          videoEl.removeEventListener("loadeddata", onReady);
+          videoEl.removeEventListener("canplay", onReady);
+          videoEl.removeEventListener("error", onError);
+          if (timeoutId) clearTimeout(timeoutId);
+        }
+
+        function finish(isReady) {
+          if (finished) return;
+          finished = true;
+          cleanup();
+          resolve(Boolean(isReady && videoEl.readyState >= 2));
+        }
+
+        function onReady() {
+          finish(true);
+        }
+
+        function onError() {
+          finish(false);
+        }
+
+        videoEl.addEventListener("loadeddata", onReady, { once: true });
+        videoEl.addEventListener("canplay", onReady, { once: true });
+        videoEl.addEventListener("error", onError, { once: true });
+
+        timeoutId = setTimeout(() => finish(false), 4500);
+      });
+    }
+
+    function preloadUpcomingScene() {
+      if (!bufferVideo || buttons.length < 2) return;
+
+      const nextIndex = (currentIndex + 1) % buttons.length;
+      const nextSrc = buttons[nextIndex] && buttons[nextIndex].dataset.video;
+      const activeSrc = activeVideo.dataset.currentSrc || getVideoSrc(activeVideo);
+      const bufferSrc = bufferVideo.dataset.currentSrc || getVideoSrc(bufferVideo);
+
+      if (!nextSrc || nextSrc === activeSrc || nextSrc === bufferSrc) return;
+
+      loadVideoSrc(bufferVideo, nextSrc);
+    }
+
+    async function activateScene(button) {
+      const nextVideo = button.dataset.video;
+      if (!nextVideo) return;
+
+      const token = ++switchToken;
+      currentIndex = Math.max(0, buttons.indexOf(button));
+      updateTextState(button);
+
+      const activeSrc = activeVideo.dataset.currentSrc || getVideoSrc(activeVideo);
+
+      if (activeSrc === nextVideo && activeVideo.readyState > 0) {
+        activeVideo.play().catch(() => {});
+        preloadUpcomingScene();
+        return;
+      }
+
+      loadVideoSrc(bufferVideo, nextVideo);
+
+      try {
+        bufferVideo.currentTime = 0;
+      } catch (error) {
+        // Some browsers disallow seeking until metadata is available.
+      }
+
+      const isReady = await waitForRenderableFrame(bufferVideo);
+      if (!isReady || token !== switchToken) return;
+
+      await bufferVideo.play().catch(() => {});
+      if (token !== switchToken) return;
+
+      prepareVideoElement(bufferVideo, true);
+      prepareVideoElement(activeVideo, false);
+      activeVideo.pause();
+
+      const previousActive = activeVideo;
+      activeVideo = bufferVideo;
+      bufferVideo = previousActive;
+
+      preloadUpcomingScene();
+    }
+
+    function stopAutoplay() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      const initialButton =
+        sceneTabs.querySelector(".scene-tab-button.is-active") || buttons[0];
+
+      currentIndex = Math.max(0, buttons.indexOf(initialButton));
+      activateScene(buttons[currentIndex]);
+
+      autoTimer = setInterval(() => {
+        if (userInteracted) {
+          stopAutoplay();
+          return;
+        }
+
+        currentIndex = (currentIndex + 1) % buttons.length;
+        activateScene(buttons[currentIndex]);
+      }, 5000);
+    }
+
+    wrapper.classList.add("uses-video-buffer");
+    prepareVideoElement(activeVideo, true);
+    activeVideo.dataset.currentSrc = getVideoSrc(activeVideo) || "";
+
+    bufferVideo = createBufferVideo(initialVideo);
+    wrapper.appendChild(bufferVideo);
+
+    buttons.forEach((button, idx) => {
+      button.addEventListener("click", function () {
+        userInteracted = true;
+        stopAutoplay();
+        currentIndex = idx;
+        activateScene(this);
+      });
+    });
+
+    startAutoplay();
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sensorBlocks = document.querySelectorAll(".js-sensor-toggle-block");
+  if (!sensorBlocks.length) return;
+
+  sensorBlocks.forEach((block) => {
+    const buttons = Array.from(block.querySelectorAll(".sensor-toggle-button"));
+    const overlays = Array.from(block.querySelectorAll(".sensor-toggle-overlay"));
+    const description = block.querySelector(".js-sensor-toggle-description");
+
+    const descriptions = {
+      none: "Click the buttons above to highlight the corresponding sensor families and their coverage.",
+      cameras: "Camera placement and coverage around the platform.",
+      lidars: "LiDAR placement and coverage for near- and long-range perception.",
+      radars: "Radar placement and coverage around the platform.",
+      multiple: "Multiple sensor families highlighted together."
+    };
+
+    const order = ["radars", "lidars", "cameras"];
+    let autoIndex = 0;
+    let autoTimer = null;
+    let userInteracted = false;
+
+    function updateDescription() {
+      if (!description) return;
+
+      const visible = overlays
+        .filter((overlay) => overlay.classList.contains("is-visible"))
+        .map((overlay) => overlay.dataset.layer);
+
+      if (visible.length === 0) {
+        description.textContent = descriptions.none;
+      } else if (visible.length === 1) {
+        description.textContent = descriptions[visible[0]] || descriptions.none;
+      } else {
+        description.textContent = descriptions.multiple;
+      }
+    }
+
+    function clearAllLayers() {
+      overlays.forEach((overlay) => overlay.classList.remove("is-visible"));
+      buttons.forEach((button) => button.classList.remove("is-active"));
+    }
+
+    function setOnlyLayer(target) {
+      overlays.forEach((overlay) => {
+        overlay.classList.toggle("is-visible", overlay.dataset.layer === target);
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.target === target);
+      });
+
+      updateDescription();
+    }
+
+    function stopAutoplay() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+
+      clearAllLayers();
+      setOnlyLayer(order[autoIndex]);
+
+      autoTimer = setInterval(() => {
+        if (userInteracted) {
+          stopAutoplay();
+          return;
+        }
+
+        autoIndex = (autoIndex + 1) % order.length;
+        setOnlyLayer(order[autoIndex]);
+      }, 1800);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        userInteracted = true;
+        stopAutoplay();
+
+        const target = this.dataset.target;
+        const targetOverlay = block.querySelector(`.sensor-toggle-overlay[data-layer="${target}"]`);
+        if (!targetOverlay) return;
+
+        const isVisible = targetOverlay.classList.contains("is-visible");
+        targetOverlay.classList.toggle("is-visible", !isVisible);
+        this.classList.toggle("is-active", !isVisible);
+
+        updateDescription();
+      });
+    });
+
+    updateDescription();
+    startAutoplay();
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const panel = document.querySelector(".js-why-animated-panel");
+  if (!panel) return;
+
+  const layout = panel.querySelector(".why-plot-layout-featured");
+  const plotCards = Array.from(panel.querySelectorAll(".js-why-plot-card"));
+  const legendItems = Array.from(panel.querySelectorAll(".why-legend-item"));
+
+  if (!layout || !plotCards.length || !legendItems.length) return;
+
+  const STEP_DURATION = 1000;
+  const FINAL_HOLD_DURATION = 5000;
+  const FEATURE_ROTATE_DURATION = 10000;
+
+  let datasetStep = 0;
+  let featuredIndex = 0;
+  let hasStarted = false;
+  let userSelectedFeature = false;
+
+  let datasetTimeouts = [];
+  let featureTimer = null;
+
+  function clearDatasetTimers() {
+    datasetTimeouts.forEach((id) => clearTimeout(id));
+    datasetTimeouts = [];
+  }
+
+  function scheduleDataset(fn, delay) {
+    const id = setTimeout(fn, delay);
+    datasetTimeouts.push(id);
+  }
+
+  function setLegendStep(stepIdx) {
+    legendItems.forEach((item, idx) => {
+      item.classList.toggle("is-active", idx <= stepIdx && stepIdx >= 0);
+    });
+  }
+
+  function setPlotsStep(stepIdx) {
+    datasetStep = stepIdx;
+
+    plotCards.forEach((card) => {
+      const frames = JSON.parse(card.dataset.frames || "[]");
+      const img = card.querySelector(".js-why-plot-image");
+      if (!img || !frames.length) return;
+
+      const clampedIdx = Math.max(0, Math.min(stepIdx, frames.length - 1));
+      img.src = frames[clampedIdx];
+    });
+  }
+
+  function preloadAllFrames() {
+    plotCards.forEach((card) => {
+      const frames = JSON.parse(card.dataset.frames || "[]");
+      frames.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+  }
+
+  function rebuildPlotLayout() {
+    const featuredCard = plotCards[featuredIndex];
+    const sideCards = plotCards.filter((_, idx) => idx !== featuredIndex);
+
+    plotCards.forEach((card, idx) => {
+      card.classList.toggle("is-featured", idx === featuredIndex);
+      card.classList.toggle("is-side", idx !== featuredIndex);
+    });
+
+    layout.innerHTML = "";
+
+    layout.appendChild(featuredCard);
+
+    const sideStack = document.createElement("div");
+    sideStack.className = "why-plot-side-stack";
+
+    sideCards.forEach((card) => {
+      sideStack.appendChild(card);
+    });
+
+    layout.appendChild(sideStack);
+  }
+
+  function setFeatured(index) {
+    featuredIndex = index;
+    rebuildPlotLayout();
+    setPlotsStep(datasetStep);
+  }
+
+  function startFeatureRotation() {
+    if (featureTimer) clearInterval(featureTimer);
+
+    featureTimer = setInterval(() => {
+      if (userSelectedFeature) return;
+
+      featuredIndex = (featuredIndex + 1) % plotCards.length;
+      setFeatured(featuredIndex);
+    }, FEATURE_ROTATE_DURATION);
+  }
+
+  function runDatasetCycle() {
+    clearDatasetTimers();
+
+    const maxStep = legendItems.length - 1;
+
+    setLegendStep(0);
+    setPlotsStep(0);
+
+    for (let step = 1; step <= maxStep; step++) {
+      scheduleDataset(() => {
+        setLegendStep(step);
+        setPlotsStep(step);
+      }, step * STEP_DURATION);
+    }
+
+    const totalCycleTime = (maxStep * STEP_DURATION) + FINAL_HOLD_DURATION;
+
+    scheduleDataset(() => {
+      setLegendStep(-1);
+      setPlotsStep(0);
+
+      scheduleDataset(() => {
+        runDatasetCycle();
+      }, 700);
+    }, totalCycleTime);
+  }
+
+  plotCards.forEach((card, idx) => {
+    card.addEventListener("click", function () {
+      userSelectedFeature = true;
+      setFeatured(idx);
+    });
+  });
+
+  preloadAllFrames();
+  rebuildPlotLayout();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasStarted) {
+        hasStarted = true;
+        runDatasetCycle();
+        startFeatureRotation();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(panel);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const blocks = document.querySelectorAll(".js-planning-tabs");
+  if (!blocks.length) return;
+
+  blocks.forEach((block) => {
+    const sceneButtons = block.querySelectorAll(".planning-scene-button");
+    const methodButtons = block.querySelectorAll(".planning-method-button");
+    const video = block.querySelector(".js-planning-video");
+    const source = block.querySelector(".js-planning-source");
+    const methodLabel = block.querySelector(".js-planning-method-label");
+
+    if (!sceneButtons.length || !methodButtons.length || !video || !source) return;
+
+    const videos = {
+      uniad: {
+        "lost-cargo": "./static/videos/uniad/forward_left_narrow_uniad_in_camera_7016.mp4",
+        "cluttered": "./static/videos/uniad/forward_left_narrow_uniad_in_camera_50.mp4",
+        "intersection": "./static/videos/uniad/forward_left_narrow_uniad_in_camera_7020.mp4"
+      },
+      alpamayo: {
+        "lost-cargo": "./static/videos/alpamayo/alpamayo_7016.mp4",
+        "cluttered": "./static/videos/alpamayo/alpamayo_50.mp4",
+        "intersection": "./static/videos/alpamayo/alpamayo_7020.mp4"
+      }
+    };
+
+    let currentScene = "lost-cargo";
+    let currentMethod = "alpamayo";
+
+    function updateVideo() {
+      const nextVideo = videos[currentMethod][currentScene];
+      if (!nextVideo) return;
+
+      if (source.getAttribute("src") !== nextVideo) {
+        source.setAttribute("src", nextVideo);
+        video.load();
+      }
+
+      if (methodLabel) {
+        methodLabel.textContent =
+          currentMethod === "uniad" ? "UniAD Planning" : "Alpamayo Planning";
+      }
+
+      const reasoningLegend = block.querySelector(".js-reasoning-legend");
+
+      if (reasoningLegend) {
+        reasoningLegend.classList.toggle("is-visible", currentMethod === "alpamayo");
+      }
+
+      video.play().catch(() => {});
+    }
+
+    sceneButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        currentScene = this.dataset.scene;
+
+        sceneButtons.forEach((btn) => btn.classList.remove("is-active"));
+        this.classList.add("is-active");
+
+        updateVideo();
+      });
+    });
+
+    methodButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        currentMethod = this.dataset.method;
+
+        methodButtons.forEach((btn) => btn.classList.remove("is-active"));
+        this.classList.add("is-active");
+
+        updateVideo();
+      });
+    });
+
+    updateVideo();
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const stableTabs = document.querySelectorAll(".stable-video-tabs");
+
+  stableTabs.forEach((tabs) => {
+    const wrapper = tabs.querySelector(".scene-tab-video-wrapper");
+    const video = tabs.querySelector(".js-scene-tab-video");
+    const buttons = Array.from(tabs.querySelectorAll(".scene-tab-button"));
+
+    if (!wrapper || !video || !buttons.length) return;
+
+    let lockedAspect = null;
+
+    function probeVideoAspect(src) {
+      return new Promise((resolve) => {
+        const probe = document.createElement("video");
+        let done = false;
+
+        function finish(value) {
+          if (done) return;
+          done = true;
+          probe.removeAttribute("src");
+          probe.load();
+          resolve(value);
+        }
+
+        probe.preload = "metadata";
+        probe.muted = true;
+        probe.playsInline = true;
+
+        probe.addEventListener("loadedmetadata", () => {
+          if (probe.videoWidth > 0 && probe.videoHeight > 0) {
+            finish(probe.videoHeight / probe.videoWidth);
+          } else {
+            finish(null);
+          }
+        }, { once: true });
+
+        probe.addEventListener("error", () => finish(null), { once: true });
+
+        probe.src = src;
+        probe.load();
+
+        setTimeout(() => finish(null), 5000);
+      });
+    }
+
+    async function computeTallestAspect() {
+      const sources = Array.from(new Set(
+        buttons
+          .map((button) => button.dataset.video)
+          .filter(Boolean)
+      ));
+
+      const aspects = await Promise.all(sources.map(probeVideoAspect));
+      const validAspects = aspects.filter((aspect) => aspect && Number.isFinite(aspect));
+
+      if (!validAspects.length) {
+        return null;
+      }
+
+      return Math.max(...validAspects);
+    }
+
+    function lockHeightFromAspect() {
+      if (!lockedAspect) return;
+
+      const width = wrapper.clientWidth;
+      if (width <= 0) return;
+
+      const height = Math.round(width * lockedAspect);
+
+      wrapper.style.setProperty("--stable-video-aspect-ratio", `${1 / lockedAspect} / 1`);
+      wrapper.style.setProperty("--stable-video-height", `${height}px`);
+      wrapper.classList.add("is-height-locked");
+    }
+
+    async function initStableHeight() {
+      lockedAspect = await computeTallestAspect();
+
+      if (!lockedAspect && video.videoWidth > 0 && video.videoHeight > 0) {
+        lockedAspect = video.videoHeight / video.videoWidth;
+      }
+
+      lockHeightFromAspect();
+    }
+
+    window.addEventListener("resize", () => {
+      lockHeightFromAspect();
+    });
+
+    video.addEventListener("loadedmetadata", () => {
+      if (!lockedAspect && video.videoWidth > 0 && video.videoHeight > 0) {
+        lockedAspect = video.videoHeight / video.videoWidth;
+        lockHeightFromAspect();
+      }
+    });
+
+    initStableHeight();
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const floatingCard = document.querySelector(".js-hero-floating-card");
+  const backTop = document.querySelector(".js-hero-back-top");
+  const heroShell = document.querySelector(".hero-image-shell");
+
+  if (!floatingCard || !heroShell) return;
+
+  function updateHeroStickyState() {
+    const threshold = Math.max(120, heroShell.offsetHeight - 72);
+    document.body.classList.toggle("hero-bar-is-compact", window.scrollY > threshold);
+  }
+
+  window.addEventListener("scroll", updateHeroStickyState, { passive: true });
+  window.addEventListener("resize", updateHeroStickyState);
+  updateHeroStickyState();
+
+  if (backTop) {
+    backTop.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+});
+</script>
+
+<div class="bibtex-modal js-bibtex-modal" aria-hidden="true">
+  <div class="bibtex-modal-backdrop js-bibtex-close"></div>
+
+  <div class="bibtex-modal-panel" role="dialog" aria-modal="true" aria-labelledby="bibtex-modal-title">
+    <div class="bibtex-modal-header">
+      <h3 id="bibtex-modal-title">BibTeX</h3>
+
+      <button type="button"
+              class="bibtex-modal-close js-bibtex-close"
+              aria-label="Close BibTeX popup">
+      </button>
+    </div>
+
+    <pre class="bibtex-modal-code"><code class="js-bibtex-code">@inproceedings{ghilotti2026truckdrive,
+  author    = {Ghilotti, Filippo and Palladin, Edoardo and Brucker, Samuel and Sigal, Adam and Bijelic, Mario and Heide, Felix},
+  title     = {TruckDrive: Long-Range Autonomous Highway Driving Dataset},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026},
+}</code></pre>
+
+    <div class="bibtex-modal-actions">
+      <button type="button"
+              class="button is-rounded is-dark js-bibtex-copy">
+        <span class="icon">
+          <i class="fas fa-copy"></i>
+        </span>
+        <span class="js-bibtex-copy-label">Copy BibTeX</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.querySelector(".js-bibtex-modal");
+  const openButtons = document.querySelectorAll(".js-bibtex-open");
+  const closeButtons = document.querySelectorAll(".js-bibtex-close");
+  const copyButton = document.querySelector(".js-bibtex-copy");
+  const copyLabel = document.querySelector(".js-bibtex-copy-label");
+  const bibtexCode = document.querySelector(".js-bibtex-code");
+
+  if (!modal || !openButtons.length) return;
+
+  function openModal() {
+    modal.classList.add("is-visible");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("bibtex-modal-open");
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-visible");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("bibtex-modal-open");
+
+    if (copyLabel) {
+      copyLabel.textContent = "Copy BibTeX";
+    }
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("is-visible")) {
+      closeModal();
+    }
+  });
+
+  if (copyButton && bibtexCode) {
+    copyButton.addEventListener("click", async function () {
+      const text = bibtexCode.textContent.trim();
+
+      try {
+        await navigator.clipboard.writeText(text);
+        if (copyLabel) {
+          copyLabel.textContent = "Copied";
+        }
+      } catch (error) {
+        const range = document.createRange();
+        range.selectNodeContents(bibtexCode);
+
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        if (copyLabel) {
+          copyLabel.textContent = "Selected";
+        }
+      }
+    });
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const confirmCheckbox = document.querySelector(".js-license-confirm");
+  const gatedLinks = document.querySelectorAll(".js-license-gated");
+
+  if (!confirmCheckbox || !gatedLinks.length) return;
+
+  function updateAccessState() {
+    const isConfirmed = confirmCheckbox.checked;
+
+    gatedLinks.forEach((link) => {
+      link.classList.toggle("is-disabled", !isConfirmed);
+      link.setAttribute("aria-disabled", isConfirmed ? "false" : "true");
+    });
+  }
+
+  confirmCheckbox.addEventListener("change", updateAccessState);
+  updateAccessState();
+});
+</script>
+
+</body>
+</html>
