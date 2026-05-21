@@ -29,7 +29,7 @@ Required Attribution
 Any permitted use or distribution of this Dataset or Adapted Material
 must include the following attribution:
 
-    "TruckDrive, provided by Torc Robotics, Inc., available at torc.github.io/TruckDrive,
+    "TruckDrive, provided by Torc Robotics, Inc., available at torc-ai.github.io/TruckDrive,
     used under the Torc Robotics Non-Commercial License v1.0."
 
 For academic publications, use the citation format in CITATION.cff.
@@ -61,5 +61,5 @@ Contact
 General inquiries: []
 Commercial licensing: licensing@torc.ai
 Privacy and takedown requests: privacy@torc.ai
-Dataset website: torc.github.io/TruckDrive
+Dataset website: torc-ai.github.io/TruckDrive
 

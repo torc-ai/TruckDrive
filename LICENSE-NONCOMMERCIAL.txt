@@ -1,7 +1,7 @@
 TORC ROBOTICS TRUCKDRIVE DATASET
 NON-COMMERCIAL LICENSE
 
-Version 0.1 — Effective May 1, 2026
+Version 1.0 — Effective May 1, 2026
 
 Copyright (c) 2026 TORC ROBOTICS, INC. All rights reserved.
 
@@ -33,7 +33,7 @@ and synthetic data generated using the Licensed Material.
 
 "Licensed Material" means the autonomous vehicle sensor data,
 annotations, labels, metadata, and associated documentation to which
-the Licensor has applied this License, published at torc.github.io/TruckDrive
+the Licensor has applied this License, published at torc-ai.github.io/TruckDrive
 and any mirrors or distributions thereof.
 
 "Licensed Rights" means the rights granted to You subject to the terms
@@ -153,7 +153,7 @@ and include the text of, or the URI or hyperlink to, this License; and
 (iv) include the following attribution notice in a location reasonably
 likely to be seen by recipients:
 
-    "TruckDrive, provided by Torc Robotics, Inc., available at torc.github.io/TruckDrive,
+    "TruckDrive, provided by Torc Robotics, Inc., available at torc-ai.github.io/TruckDrive,
     used under the Torc Robotics Non-Commercial License v1.0."
 
 For academic publications, You must cite the Licensed Material using

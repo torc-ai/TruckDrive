@@ -17,5 +17,5 @@ authors:
     given-names: Felix
 year: 2026
 license: LicenseRef-Torc-Robotics-NonCommercial-1.0
-repository: torc-ai/TorcDrive
-url: https://github.com/torc-ai/TorcDrive
+repository: TruckDrive
+url: torc-ai/TruckDrive

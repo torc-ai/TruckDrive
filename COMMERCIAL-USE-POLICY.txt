@@ -1,7 +1,7 @@
 Commercial Use Policy
 
 TORC ROBOTICS TRUCKDRIVE DATASET
-Version 0.1 — Effective May 1, 2026
+Version 1.0 — Effective May 1, 2026
 
 This document provides a plain-language guide to the definition of
 Commercial Use in LICENSE-NONCOMMERCIAL.txt (the "License"). It is
