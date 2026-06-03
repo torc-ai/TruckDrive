@@ -4,7 +4,8 @@
 
 **Torc Robotics**
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-2ea44f?style=flat-square)](https://arxiv.org/pdf/2603.02413)
+[![Paper](https://img.shields.io/badge/Paper-PDF-2ea44f?style=flat-square)](./static/TruckDriveMain.pdf)
+[![Supplementary](https://img.shields.io/badge/Supplementary-PDF-6f42c1?style=flat-square)](./static/TruckDriveSupplementary.pdf)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.02413-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.02413)
 [![Project Page](https://img.shields.io/badge/Project-Page-f0ad4e?style=flat-square)](http://torc-ai.github.io/TruckDrive)
 [![Devkit](https://img.shields.io/badge/Code-Devkit-0366d6?style=flat-square)](https://github.com/torc-ai/TruckDrive)
